@@ -32,3 +32,16 @@
     border-radius: 9px;
     background-color: #0fed3036;
 }
+
+.cover {
+    background-image: url(/assets/images/cover.jpg);
+    background-size: cover; /* Scale the image to cover the element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 100%; /* Set the width of the element */
+    height: 100vh; /* Set the height of the element (e.g., full viewport height) */
+}
+
+/* .weather-page {
+    height: 100vh;
+} */

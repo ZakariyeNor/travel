@@ -15,33 +15,41 @@
 </head>
 <body>
       <!-- Main section -->
-    <section class="options-page">
+    <section class="weather-page cover">
 
         <header>
             <nav>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="options.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
+                <a href="index.html"><i class="fa-solid fa-house"></i></a>
 
-                </ul>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-info dropdown-toggle d-flex justify-content-right" data-bs-toggle="dropdown"      aria-expanded="false">
+                            Action
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="weather.html">
+                                <i class="fas fa-cloud"></i> Weather
+                            </a>
+                        </li>
+                        <li><hr></li>
+                        <li>
+                            <a class="dropdown-item" href="holiday.html">
+                                <i class="fas fa-calendar"></i> Calendar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
         </header>
  
       </section>
 
+      <!-- Bootstrap js cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
       <!-- Js external link -->
        <script src="assets/js/script.js"></script>
-       
+
     <!-- Font awesome link  -->
     <script src="https://kit.fontawesome.com/44dbf25b5c.js" crossorigin="anonymous"></script>
 </body>
