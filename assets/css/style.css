@@ -49,3 +49,31 @@
     
 }
 
+#main-input {
+    position: absolute;
+    top: 599px;
+    padding-left: 300px;
+}
+
+#main-input h2 {
+    position: relative;
+    padding-left: 240px;
+}
+
+#main-input button {
+    margin-top: 50px;
+    margin-left: 340px;
+}
+#input-data {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: aliceblue;
+}
+
+#city-data {
+    width: 90%;
+    margin-top: 50px;
+    border-radius: 18px;
+    height: 50px;
+    border-color: transparent;
+}
