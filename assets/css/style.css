@@ -42,6 +42,15 @@
     height: 100vh; /* Set the height of the element (e.g., full viewport height) */
 }
 
+.cover-1 {
+    background-image: url(/assets/images/cover-1.jpg);
+    background-size: cover; /* Scale the image to cover the element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    width: 100%; /* Set the width of the element */
+    height: 100vh; /* Set the height of the element (e.g., full viewport height) */
+}
+
 #owna  a {
     text-decoration: none;
     font-size: 20px;

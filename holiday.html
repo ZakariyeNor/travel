@@ -11,36 +11,55 @@
     <!-- Hover css cdn link -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
 
-    <title>Travel</title>
+    <title>API Bank</title>
 </head>
 <body>
-      <!-- Main section -->
-    <section class="options-page">
-
+      <!-- the page -->
+    <section class="weather-page cover-1">
+        <!-- Header -->
         <header>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="options.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Home</a>
-                    </li>
+            <!-- <nav> -->
+                 <div class="btn-group" class="row">
 
-                </ul>
-            </nav>
+                    <div class="col-12 align-baseline m-5 p-3">
+
+                        <nav class="navbar navbar-expand-lg lights col-12" id="owna">
+                             <!-- Home Icon -->
+                        <a href="index.html">
+                            <i class="fa-solid fa-house mx-3"></i>
+                        </a>
+                            <a class="nav-brand mx-3" href="weather.html">Weather</a>
+                            <a class="nav-brand mx-3" href="holiday.html">Calendar</a>
+                    
+                        </nav>
+                    </div>
+                </div>
         </header>
+        <!-- Main section -->
+         <article>
+            <div class="row" id="main-input">
+                <div class="col-12">
+                    <h2 class="text-capitalize" id="input-data">Global holiday finder</h2>
+                </div>
+                <div class="col-12">
+                    <input type="text" name="city-data" id="city-data" placeholder="Enter the city name">
+                </div>
+                <div class="col">
+                    <button class="btn btn-success btn-lg">
+                        Browse holidays
+                    </button>
+                </div>
+            </div>
+         </article>
+        
  
       </section>
 
+      <!-- Bootstrap js cdn link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
       <!-- Js external link -->
-      <script src="assets/js/script.js"></script>
+       <script src="assets/js/script.js"></script>
 
     <!-- Font awesome link  -->
     <script src="https://kit.fontawesome.com/44dbf25b5c.js" crossorigin="anonymous"></script>
