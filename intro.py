@@ -1,6 +1,5 @@
 # Importing dependencies
 from flask import Flask, render_template, abort, request, jsonify
-import requests
 import os
 
 #Declaring the app and where the folders and files are 
@@ -316,7 +315,7 @@ def get_specific(city_id):
 @app.route('/api/weather', methods=['POST'])
 def post_city():
     if not request.json or not all(key in request.json for key in ["city", "temperature", "condition"]):
-        abort(404, description='Invalid request: Missing required fields')
+        abort(400, description='Invalid request: Missing required fields')
         return
 
         #generate new id
@@ -340,20 +339,21 @@ def post_city():
 #Update current city using it's id
 @app.route('/api/weather/<int:city_id>', methods=['PUT'])
 def update_weather(city_id):
-    city = get_specific_city(city_id)
-    if city is None:
-        abort(404, description="City not found")
+  global weather_today
+  city = get_specific_city(city_id)
+  if city is None:
+    abort(404, description="City not found")
     
-    if not request.json:
-        abort(400, description="Invalid request: No data provided")
+  if not request.json:
+    abort(400, description="Invalid request: No data provided")
 
-    #Update the city
-    city['city'] = request.json.get('city', city['city'])
-    city['temperature'] = request.json.get('temperature', city['temperature'])
-    city['condition'] = request.json.get('condition', city['condition'])
+  #Update the city
+  city['city'] = request.json.get('city', city['city'])
+  city['temperature'] = request.json.get('temperature', city['temperature'])
+  city['condition'] = request.json.get('condition', city['condition'])
     
 
-    return jsonify(city), 200
+  return jsonify(city), 200
 
 
 #Delete specific city

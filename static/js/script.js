@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const startLevel = document.getElementById('start-level');
     if (startLevel) {
         startLevel.addEventListener('click', (e) => {
-            window.location.href = 'weather.html'
+            window.location.href = weatherUrl;
         });
     } else {
         console.error('Button with id "start-level" not found!');
