@@ -1,5 +1,5 @@
 .landing-page {
-    background-color: #007a8c;
+    background-color: #004953;
 }
 .welcome-part {
     color: #fff;
@@ -34,19 +34,21 @@
 }
 
 .cover {
-    background-image: url(/assets/images/cover.jpg);
+    /* background-image: url(/assets/images/cover.jpg);
     background-size: cover; /* Scale the image to cover the element */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    width: 100%; /* Set the width of the element */
-    height: 100vh; /* Set the height of the element (e.g., full viewport height) */
+    /* background-position: center; Center the image */
+    /* background-repeat: no-repeat; Prevent the image from repeating */
+    width: 100%;
+    height: 100vh;
+    background-color: #007a8c;
 }
 
 .cover-1 {
-    background-image: url(/assets/images/cover-1.jpg);
-    background-size: cover; /* Scale the image to cover the element */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
+    /* background-image: url(/assets/images/cover-1.jpg);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; */
+    background-color: #4a6a7f;
     width: 100%; /* Set the width of the element */
     height: 100vh; /* Set the height of the element (e.g., full viewport height) */
 }
