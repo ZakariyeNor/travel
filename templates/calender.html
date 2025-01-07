@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +27,7 @@
 
                         <nav class="navbar navbar-expand-lg lights col-12" id="owna">
                              <!-- Home Icon -->
-                        <a href="index.html">
+                        <a href="base.html">
                             <i class="fa-solid fa-house mx-3"></i>
                         </a>
                             <a class="nav-brand mx-3" href="weather.html">Weather</a>
@@ -65,3 +67,5 @@
     <script src="https://kit.fontawesome.com/44dbf25b5c.js" crossorigin="anonymous"></script>
 </body>
 </html>
+
+{% endblock %}

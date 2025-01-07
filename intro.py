@@ -4,9 +4,7 @@ import requests
 import os
 
 #Declaring the app and where the folders and files are 
-app = Flask(__name__,
-                    template_folder='templates',
-                    static_folder='static')
+app = Flask(__name__, static_folder='static')
 
 """ This is made up weather in json, and i use it to fetch from this memory and I'll post, update and delete from frontend """
 weather_today = [
@@ -280,18 +278,19 @@ holiday_data = [
 #Home page rendering
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template("base.html")
+
 
 
 #App route for weather template
 @app.route('/weather')
-def render_weather():
-    return render_template('weather.html')
+def weth():
+    return render_template("weather.html")
 
 
 #weather app api 
 @app.route('/api/weather', methods=['GET'])
-def get_weather():
+def get_cit():
     return jsonify(weather_today)
 
 
@@ -318,6 +317,7 @@ def get_specific(city_id):
 def post_city():
     if not request.json or not all(key in request.json for key in ["city", "temperature", "condition"]):
         abort(404, description='Invalid request: Missing required fields')
+        return
 
         #generate new id
     new_id = max(item['id'] for item in weather_today) + 1 if weather_today else 1
@@ -326,9 +326,9 @@ def post_city():
 
     new_city = {
         'id': new_id,
-        'city': request.json('city'),
-        'temperature': request.json('temperature'),
-        'condition': request.json('condition')
+        'city': request.json['city'],
+        'temperature': request.json['temperature'],
+        'condition': request.json['condition']
     }
 
     #add in-memory list
@@ -349,7 +349,7 @@ def update_weather(city_id):
 
     #Update the city
     city['city'] = request.json.get('city', city['city'])
-    city['temperature'] = request.json.get('tempreture', city['temperature'])
+    city['temperature'] = request.json.get('temperature', city['temperature'])
     city['condition'] = request.json.get('condition', city['condition'])
     
 
@@ -360,7 +360,6 @@ def update_weather(city_id):
 @app.route('/api/weather/<int:city_id>', methods=['DELETE'])
 def delete_city(city_id):
   city = get_specific_city(city_id)
-  global weather_today
   if city is None:
     abort(404, 'City not Found')
 
@@ -371,7 +370,7 @@ def delete_city(city_id):
 
 #App route for calender template
 @app.route('/calender')
-def render_weather():
+def calen():
     return render_template('calender.html')
 
 
