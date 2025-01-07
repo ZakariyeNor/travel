@@ -356,6 +356,19 @@ def update_weather(city_id):
     return jsonify(city), 200
 
 
+#Delete specific city
+@app.route('/api/weather/<int:city_id>', methods=['DELETE'])
+def delete_city(city_id):
+  city = get_specific_city(city_id)
+  global weather_today
+  if city is None:
+    abort(404, 'City not Found')
+
+  weather_today = [item for item in weather_today if item['id'] != city_id]
+  return jsonify({"message": "Weather data deleted"}), 200
+
+
+
 #App route for calender template
 @app.route('/calender')
 def render_weather():
