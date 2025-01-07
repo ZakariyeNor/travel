@@ -34,47 +34,40 @@
 }
 
 .cover {
-    /* background-image: url(/assets/images/cover.jpg);
-    background-size: cover; /* Scale the image to cover the element */
-    /* background-position: center; Center the image */
-    /* background-repeat: no-repeat; Prevent the image from repeating */
     width: 100%;
     height: 100vh;
     background-color: #007a8c;
 }
 
 .cover-1 {
-    /* background-image: url(/assets/images/cover-1.jpg);
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; */
     background-color: #4a6a7f;
-    width: 100%; /* Set the width of the element */
-    height: 100vh; /* Set the height of the element (e.g., full viewport height) */
+    width: 100%;
+    height: 100vh;
 }
 
-#owna  a {
+#owna a {
     text-decoration: none;
     font-size: 20px;
     color: #b9c5c6;
-    
 }
 
 #main-input {
-    position: absolute;
-    top: 599px;
-    padding-left: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    height: 100%; /* Full viewport height to center vertically */
+    text-align: center; /* Centers text horizontally */
 }
 
 #main-input h2 {
-    position: relative;
-    padding-left: 240px;
+    margin-bottom: 20px; /* Adds some space below the h2 */
 }
 
 #main-input button {
-    margin-top: 50px;
-    margin-left: 340px;
+    margin-top: 20px; /* Adds some space above the button */
 }
+
 #input-data {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -83,8 +76,11 @@
 
 #city-data {
     width: 90%;
-    margin-top: 50px;
+    max-width: 400px; /* Limits the width of the input */
+    margin-top: 20px;
     border-radius: 18px;
     height: 50px;
     border-color: transparent;
+    padding: 10px;
+    font-size: 16px;
 }
