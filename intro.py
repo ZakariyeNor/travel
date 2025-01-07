@@ -285,7 +285,7 @@ def home():
 #App route for weather template
 @app.route('/weather')
 def weth():
-    return render_template("weather.html")
+  return render_template('weather.html')
 
 
 #weather app api 
