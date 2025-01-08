@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Fetch data from weather-today and display it on the front end
 async function fetchWeather() {
-    const cityName = document.getElementById('city-data').ariaValueMax;
+    const cityName = document.getElementById('city-data').value;
     try {
         // Fetch wether data from Flask API
         const response = await fetch('http://127.0.0.1:5000/api/weather');
@@ -111,7 +111,7 @@ async function updateWeather() {
 
     try {
         // Update data 
-        const response = await fetch('http://127.0.0.1:5000/api/weather', {
+        const response = await fetch('/api/weather/<city_id>', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -142,11 +142,11 @@ async function updateWeather() {
 async function deleteWeather() {
     try {
         //Get the city id to Delete
-        const deleteCity = document.getElementById('deleteId').value;
+        const deleteCityId = document.getElementById('deleteId').value;
 
 
         //Send delete request to the server 
-        const response = await fetch('http://127.0.0.1:5000/api/weather/id', {
+        const response = await fetch(`/api/weather/${deleteCityId}`, {
             method: 'DELETE'
         });
 

@@ -277,7 +277,7 @@ holiday_data = [
 #Home page rendering
 @app.route('/')
 def home():
-    return render_template("base.html")
+    return render_template("home.html")
 
 
 
@@ -357,7 +357,7 @@ def update_weather(city_id):
 
 
 #Delete specific city
-@app.route('/api/weather/<int:city_id>', methods=['DELETE'])
+@app.route('/api/weather/<city_id>', methods=['DELETE'])
 def delete_city(city_id):
   city = get_specific_city(city_id)
   if city is None:

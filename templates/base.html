@@ -14,33 +14,47 @@
     <title>Travel</title>
 </head>
 <body>
-      
-    <section class="landing-page vh-100 d-flex justify-content-center align-items-center">
-        <div class="text-center">
-          <div>
-            <h1 class="welcome-part">The API <span>inn</span></h1>
-          </div>
-          <div>
-            <p class="subtitle">Where Travel Meets Technology!</p>
-          </div>
-          <button class="btn btn-success to-right" id="start-level">
-            Show API's
-          </button>
+  <header>
+    <!-- <nav> -->
+         <div class="btn-group">
+
+            <div class="align-baseline m-5 p-3">
+
+                <nav class="navbar navbar-expand-lg lights col-12" id="owna">
+                     <!-- Home Icon -->
+                     <a class="nav-brand mx-3" href="{{ url_for('home') }}">Home</a>
+
+                     <a class="nav-brand mx-3" href="{{ url_for('weth') }}">Weather</a>
+                     
+                     <a class="nav-brand mx-3" href="{{ url_for('calen') }}">Calendar</a>
+                </nav>
+            </div>
         </div>
-      </section>
+</header>
 
-      <!-- Pass the URL to JavaScript -->
-    <script>
-      const weatherUrl = "{{ url_for('weth') }}";
-  </script>
 
-      {% block content %}
-      {% endblock %}
+  <!-- Content block for child templates -->
+  {% block content %}
+      <!-- Default content if no child template provides it -->
+      {% if not caller %}
+          <section class="landing-page vh-100 d-flex justify-content-center align-items-center">
+              <!-- Landing page content -->
+          </section>
+      {% endif %}
+  {% endblock %}
 
-      <!-- Js external link -->
-      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <!-- Js external link -->
+<script>
+  const weatherUrl = "{{ url_for('weth') }}";
+</script>
+<!-- Js external link and font awesome as before -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-    <!-- Font awesome link  -->
-    <script src="https://kit.fontawesome.com/44dbf25b5c.js" crossorigin="anonymous"></script>
+<!-- Font awesome link  -->
+<script src="https://kit.fontawesome.com/44dbf25b5c.js" crossorigin="anonymous"></script>
+
+  <!-- Js external link and font awesome as before -->
+
+
 </body>
 </html>
