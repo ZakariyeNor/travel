@@ -12,33 +12,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Fetch data from weather-today and display it on the front end
 async function fetchWeather() {
-    const cityName = document.getElementById('city-data').value;
+
     try {
+        // assign variable to user inout 
+        const cityName = document.getElementById('city-data').value;
+
         // Fetch wether data from Flask API
-        const response = await fetch('http://127.0.0.1:5000/api/weather');
+        const response = await fetch(`api/weather?city=${encodeURIComponent(cityName)}`);
         
         if 
         (!response.ok) {
             throw new Error('Failed to fetch data: ' + response.statusText);
         }
 
-
         const data = await response.json();
 
         // Find the city from the data
-        const city = data.find(item => item.city.toLowerCase() === cityName.toLowerCase());
+        ///const city = data.find(item => item.city.toLowerCase() === cityName.toLowerCase());
 
         // Store the city in varaible
-        if (city) {
+        if (data.error) {
             document.getElementById('weatherResult').innerHTML = `
-                    <h3>Weather in: <strong>${city.city}</strong></h3>
-                    <p>Temperature: <strong>${city.temperature} °C</strong></p>
-                    <p>Condition: <strong>${city.condition}</strong></p>
-            `;
+                    <p>City not found. Please try another one. ${data.error}</p>
+                    `;
+
         } else {
             document.getElementById('weatherResult').innerHTML = `
-                    <p>City not found. Please try another one.</p>
-                    `;
+                    <h3>Weather in: <strong>${data.city}</strong></h3>
+                    <p>Temperature: <strong>${data.temperature} °C</strong></p>
+                    <p>Condition: <strong>${data.condition}</strong></p>
+            `;
         }
     } catch (error) {
         // Catch any error that occurred during the fetch or data processsing

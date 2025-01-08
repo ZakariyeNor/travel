@@ -290,6 +290,16 @@ def weth():
 #weather app api 
 @app.route('/api/weather', methods=['GET'])
 def get_cit():
+  city_name = request.args.get('city')
+  if city_name:
+    city = next ((item for item in weather_today if item['city'] == city_name.lower()),None)
+    return jsonify(weather_today)
+
+    if city:
+      return jsonify(city)
+    else:
+      return jsonify({'error': 'City not found'}), 404
+  else:
     return jsonify(weather_today)
 
 
